@@ -97,7 +97,6 @@ strong{font-weight:600;color:#fff}
   background:rgba(4,7,13,.86);backdrop-filter:blur(14px);
   opacity:0;transition:.35s;
 }
-.nav.scrolled{border-bottom:1px solid var(--line)}
 .nav.scrolled::before{opacity:1}
 .nav__brand img{height:44px;transition:.3s}
 .nav__links{display:flex;align-items:center;gap:1.8rem}
