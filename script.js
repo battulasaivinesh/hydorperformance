@@ -1,5 +1,10 @@
 /* ============ Hydor Performance ============ */
 
+// ---------- always start at top on load/refresh ----------
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+window.scrollTo(0, 0);
+window.addEventListener("pageshow", () => window.scrollTo(0, 0));
+
 // ---------- scroll reveal ----------
 const observer = new IntersectionObserver(
   (entries) => {
