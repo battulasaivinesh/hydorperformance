@@ -2,8 +2,13 @@
 
 // ---------- always start at top on load/refresh ----------
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-window.scrollTo(0, 0);
-window.addEventListener("pageshow", () => window.scrollTo(0, 0));
+// drop any #section hash from a previous visit so the browser can't anchor-jump
+if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+const toTop = () => window.scrollTo(0, 0);
+toTop();
+// mobile Chrome restores scroll asynchronously after load — beat it with a late reset
+window.addEventListener("load", () => requestAnimationFrame(toTop));
+window.addEventListener("pageshow", toTop);
 
 // ---------- scroll reveal ----------
 const observer = new IntersectionObserver(
