@@ -386,8 +386,9 @@ strong{font-weight:600;color:#fff}
   .section{padding:4.5rem 0}
   .grid4,.grid3,.steps,.policies{grid-template-columns:1fr}
   .flow__item{min-width:100%}
-  .nav{padding:.7rem 1.1rem;justify-content:flex-end}
-  .nav__brand{display:none}
+  .nav{padding:.7rem 1.1rem}
+  .nav__brand{opacity:0;pointer-events:none;transform:translateY(-6px);transition:.4s}
+  .nav.past-hero .nav__brand{opacity:1;pointer-events:auto;transform:none}
   .hero__strip{display:none}
   .nav__burger{display:flex}
   .nav__links{

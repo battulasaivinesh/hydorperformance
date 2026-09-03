@@ -36,7 +36,11 @@ document.querySelectorAll(".reveal, .hub").forEach((el) => observer.observe(el))
 
 // ---------- nav ----------
 const nav = document.getElementById("nav");
-const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 40);
+const hero = document.querySelector(".hero");
+const onScroll = () => {
+  nav.classList.toggle("scrolled", window.scrollY > 40);
+  nav.classList.toggle("past-hero", window.scrollY > hero.offsetHeight - 80);
+};
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 
