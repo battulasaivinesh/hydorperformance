@@ -107,6 +107,8 @@ strong{font-weight:600;color:#fff}
 .nav__links a:hover{color:var(--blue)}
 .nav__cta{border:1px solid var(--blue);padding:.5rem 1.1rem;border-radius:4px;color:#fff!important}
 .nav__cta:hover{background:var(--blue)}
+.nav__right{display:flex;align-items:center;gap:1rem}
+.nav__cta--mobile{display:none;font-family:var(--display);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase}
 .nav__burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px;position:relative;z-index:120}
 .nav__burger span{width:24px;height:2px;background:var(--silver);transition:.3s}
 .nav__burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -393,10 +395,14 @@ strong{font-weight:600;color:#fff}
   }
   .nav__links.open{opacity:1;pointer-events:auto}
   .nav__links a{font-size:.95rem}
+  .nav__links .nav__cta{display:none}
+  .nav__cta--mobile{display:inline-block}
   .ptable{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .ptable table{min-width:380px}
-  .ptable th{padding:.6rem .8rem;font-size:.58rem;letter-spacing:.14em}
-  .ptable td{padding:.75rem .8rem;font-size:.84rem;white-space:nowrap}
+  .ptable table{width:100%;table-layout:auto}
+  .ptable th{padding:.55rem .4rem;font-size:.5rem;letter-spacing:.06em}
+  .ptable td{padding:.7rem .4rem;font-size:.78rem;white-space:nowrap}
+  .ptable th:first-child,.ptable td:first-child{padding-left:.9rem}
+  .ptable th:last-child,.ptable td:last-child{padding-right:.9rem}
   .ptable__head{padding:1.2rem 1rem .3rem}
   .ptable__note{padding:.9rem 1rem 1.3rem}
 }
