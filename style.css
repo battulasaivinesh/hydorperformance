@@ -386,7 +386,9 @@ strong{font-weight:600;color:#fff}
   .section{padding:4.5rem 0}
   .grid4,.grid3,.steps,.policies{grid-template-columns:1fr}
   .flow__item{min-width:100%}
-  .nav{padding:.7rem 1.1rem}
+  .nav{padding:.7rem 1.1rem;justify-content:flex-end}
+  .nav__brand{display:none}
+  .hero__strip{display:none}
   .nav__burger{display:flex}
   .nav__links{
     position:fixed;inset:0;z-index:110;background:rgba(4,7,13,.97);

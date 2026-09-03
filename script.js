@@ -6,9 +6,19 @@ if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 if (location.hash) history.replaceState(null, "", location.pathname + location.search);
 const toTop = () => window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 toTop();
-// mobile Chrome restores scroll asynchronously after load — beat it with a late reset
-window.addEventListener("load", () => requestAnimationFrame(toTop));
-window.addEventListener("pageshow", toTop);
+// mobile Chrome restores scroll asynchronously, sometimes well after load.
+// Re-assert top for the first ~400ms unless the user has started scrolling.
+let userScrolled = false;
+["touchstart", "wheel", "keydown"].forEach((ev) =>
+  window.addEventListener(ev, () => { userScrolled = true; }, { once: true, passive: true })
+);
+const hardReset = () => { if (!userScrolled && window.scrollY !== 0) toTop(); };
+window.addEventListener("load", () => {
+  requestAnimationFrame(hardReset);
+  setTimeout(hardReset, 100);
+  setTimeout(hardReset, 400);
+});
+window.addEventListener("pageshow", () => { userScrolled = false; toTop(); });
 
 // ---------- scroll reveal ----------
 const observer = new IntersectionObserver(
