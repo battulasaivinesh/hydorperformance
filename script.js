@@ -4,7 +4,7 @@
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 // drop any #section hash from a previous visit so the browser can't anchor-jump
 if (location.hash) history.replaceState(null, "", location.pathname + location.search);
-const toTop = () => window.scrollTo(0, 0);
+const toTop = () => window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 toTop();
 // mobile Chrome restores scroll asynchronously after load — beat it with a late reset
 window.addEventListener("load", () => requestAnimationFrame(toTop));
