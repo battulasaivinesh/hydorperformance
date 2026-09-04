@@ -107,6 +107,8 @@ strong{font-weight:600;color:#fff}
 .nav__links a:hover{color:var(--blue)}
 .nav__cta{border:1px solid var(--blue);padding:.5rem 1.1rem;border-radius:4px;color:#fff!important}
 .nav__cta:hover{background:var(--blue)}
+.nav__dash{border:1px solid var(--line);padding:.5rem 1.1rem;border-radius:4px;color:#fff!important}
+.nav__dash:hover{border-color:var(--blue);color:var(--blue)!important}
 .nav__right{display:flex;align-items:center;gap:.8rem;flex-wrap:nowrap;flex-shrink:0}
 .nav__cta--mobile{display:none;font-family:var(--display);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;padding:.45rem .8rem}
 .nav__burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px;position:relative;z-index:120}
@@ -409,3 +411,6 @@ strong{font-weight:600;color:#fff}
   .ptable__head{padding:1.2rem 1rem .3rem}
   .ptable__note{padding:.9rem 1rem 1.3rem}
 }
+
+/* screen-reader only (SEO h1) */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
